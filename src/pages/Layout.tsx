@@ -1,12 +1,13 @@
 import React, { type ReactNode } from "react";
 import { Outlet } from "react-router-dom";
+import NavBar from "./NavBar";
 
 type Props = { children?: ReactNode };
 
 function Layout({ children }: Props) {
   return (
     <div>
-      navbar
+      <NavBar />
       <div>{children ?? <Outlet />}</div>
     </div>
   );
