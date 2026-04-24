@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-type Game = {
+export type Game = {
   internalName: string;
   title: string;
   metacriticLink: string;
