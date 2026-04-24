@@ -10,7 +10,14 @@ import {
 
 export default function Hero() {
   return (
-    <Flex h={"calc(100vh - 64px)"}>
+    <Flex
+      background={`linear-gradient(
+         rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)
+        ), url(https://images.unsplash.com/photo-1529663297269-6d349ec39b57?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)`}
+      w={"full"}
+      backgroundSize={"cover"}
+      h={"calc(100vh - 64px)"}
+    >
       <Container maxW={"3xl"}>
         <Stack
           as={Box}
@@ -22,6 +29,7 @@ export default function Hero() {
             fontWeight={600}
             fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
             lineHeight={"110%"}
+            color={"white"}
           >
             Bienvenidos a <br />
             <Text as={"span"} color={"green.400"}>
