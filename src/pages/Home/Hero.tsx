@@ -7,8 +7,14 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import useChuck from "./useChuck";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
+  const navigate = useNavigate();
+
+  const { data, isLoading } = useChuck();
+
   return (
     <Flex
       background={`linear-gradient(
@@ -37,7 +43,8 @@ export default function Hero() {
             </Text>
           </Heading>
           <Text color={"gray.500"}>
-            Una web para encontrar ofertas. Además contamos chistes:
+            Una web para encontrar ofertas. Además contamos chistes:{" "}
+            {isLoading ? "Cargando... " : data?.value}
           </Text>
           <Stack
             direction={"column"}
@@ -54,6 +61,7 @@ export default function Hero() {
               _hover={{
                 bg: "green.500",
               }}
+              onClick={() => navigate("/games")}
             >
               Empieza ahora
             </Button>
